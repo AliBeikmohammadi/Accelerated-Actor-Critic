@@ -93,25 +93,60 @@ python plot_results_ablation.py
 
 
 ## How to Run Experiments
-### AN ILLUSTRATION: Random Walk
-> The script below runs a new test on the Random Walk environment with customized settings.
+### An Illustration of working with Accelerated-TD3
+> The script below runs a new test on the Pendulum-v1 environment using Accelerated-TD3 with customized settings.
 ```
-python RandomWalk.py -h
+python SB3_TD3_Pendulum-v1_run.py -h
 
-
-usage: RandomWalk.py [-h] [--N N] [--E E] [--R R] [--b [B ...]] [--l [L ...]] [--d D] [--save_dir SAVE_DIR]
-
+usage: SB3_TD3_Pendulum-v1_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                  [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--Noise_STD NOISE_STD]
+                                  [--Noise_Prob NOISE_PROB]
 optional arguments:
-  -h, --help           show this help message and exit
-  --N N                Number of states (including the ending states); default 5
-  --E E                Number of episodes per each test; default 100
-  --R R                Number of independent test; default 100
-  --b [B ...]          initial_beta; default [0, 1, 100] if 0: only R^T, if 100: only only R^A, if (0, 1) if adaptive beta*R^A + (1-adaptive beta)*R^T where adaptive beta =
-                       initial_beta*((lambda)**episode)
-  --l [L ...]          lambda; default [0.1, 0.5, 0.9]
-  --d D                debug_level; default 0 0:nothing print 1:print average result over runs, 2:print result after end of each episode, 3:print all information, like actions and reward in each state
-  --save_dir SAVE_DIR  Save Directory; default ./Results/RandomWalk/
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 3531619893
+  --algo ALGO           default TD3
+  --env ENV             default Pendulum
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
 ```
+### An Illustration of working with Accelerated-SAC
+> The script below runs a new test on the Pendulum-v1 environment using Accelerated-SAC with customized settings.
+```
+python SB3_SAC_Pendulum-v1_run.py -h
+
+usage: SB3_SAC_Pendulum-v1_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                  [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--Noise_STD NOISE_STD]
+                                  [--Noise_Prob NOISE_PROB]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 900598021
+  --algo ALGO           default SAC
+  --env ENV             default Pendulum
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
+```
+
+
 ### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: Optimal Temperature Control with Constraint
 > The scripts below run a new test on the Optimal Temperature Control with Constraint environment with customized settings.
 ```
