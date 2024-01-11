@@ -363,73 +363,16 @@ optional arguments:
 
 
 
-# Examples
-## Plots
-### Random Walk
-* Use the scripts below to generate the Random Walk environment figures mentioned in the papers.
+# Example
 ```
-python plot_results.py --Env RW --O_RT True --O_RA True --input_dir ./Results/RandomWalk/RW_s5_r100_e100.csv --save_dir ./Results/RandomWalk/ 
-python plot_results.py --Env RW --O_RT True --O_RA False --input_dir ./Results/RandomWalk/RW_s11_r100_e150.csv --save_dir ./Results/RandomWalk/ 
-python plot_results.py --Env RW --O_RT True --O_RA False --input_dir ./Results/RandomWalk/RW_s33_r100_e500.csv --save_dir ./Results/RandomWalk/ 
-```
-### Optimal Temperature Control with Constraint
-* Use the scripts below to generate the Optimal Temperature Control with Constraint environment figures mentioned in the AAMAS paper.
-```
-python plot_results.py --Env TC --x_min 0 --x_max 8000 --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega100_beta1.0_E4000.csv --baseline_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega100_beta0.0_E4000.csv --save_dir ./Results/Temperature_Control/
-python plot_results.py --Env TC --x_min 0 --x_max 5000  --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega10_beta1.0_E4000.csv --baseline_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega10_beta0.0_E4000.csv --save_dir ./Results/Temperature_Control/
-python plot_results.py --Env TC --x_min 0 --x_max 1200 --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega1_beta1.0_E4000.csv --baseline_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega1_beta0.0_E4000.csv --save_dir ./Results/Temperature_Control/
-```
-
-* Use the scripts below to generate the Optimal Temperature Control with Constraint environment figures mentioned in the ECC paper.
-```
-python plot_added_results.py --Env TC --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega1_beta1.0_E4000.csv --PPO_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega1_beta0.0_E4000.csv --A2C_dir ./Results/Temperature_Control/Temperature_Control_A2C_omega1_R^T_reward.csv --DDPG_dir ./Results/Temperature_Control/Temperature_Control_DDPG_omega1_R^T_reward.csv --SAC_dir ./Results/Temperature_Control/Temperature_Control_SAC_omega1_R^T_reward.csv --TD3_dir ./Results/Temperature_Control/Temperature_Control_TD3_omega1_R^T_reward.csv --save_dir ./Results/Temperature_Control/Figures/  --x_min 0 --x_max 1200
-
-python plot_added_results.py --Env TC --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega10_beta1.0_E4000.csv --PPO_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega10_beta0.0_E4000.csv --A2C_dir ./Results/Temperature_Control/Temperature_Control_A2C_omega10_R^T_reward.csv --DDPG_dir ./Results/Temperature_Control/Temperature_Control_DDPG_omega10_R^T_reward.csv --SAC_dir ./Results/Temperature_Control/Temperature_Control_SAC_omega10_R^T_reward.csv --TD3_dir ./Results/Temperature_Control/Temperature_Control_TD3_omega10_R^T_reward.csv --save_dir ./Results/Temperature_Control/Figures/  --x_min 0 --x_max 5000
-
-python plot_added_results.py --Env TC --TA_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega100_beta1.0_E4000.csv --PPO_dir ./Results/Temperature_Control/Temperature_Control_e8000_omega100_beta0.0_E4000.csv --A2C_dir ./Results/Temperature_Control/Temperature_Control_A2C_omega100_R^T_reward.csv --DDPG_dir ./Results/Temperature_Control/Temperature_Control_DDPG_omega100_R^T_reward.csv --SAC_dir ./Results/Temperature_Control/Temperature_Control_SAC_omega100_R^T_reward.csv --TD3_dir ./Results/Temperature_Control/Temperature_Control_TD3_omega100_R^T_reward.csv --save_dir ./Results/Temperature_Control/Figures/  --x_min 0 --x_max 8000
-```
-
-
-### A Coupled Four Tank MIMO System environment
-* Use the scripts below to generate the Coupled Four Tank MIMO System environment figures mentioned in the AAMAS paper.
-```
-python plot_results.py --Env FT  --x_min 0 --x_max 30000 --TA_dir ./Results/Four_Tank/Four_Tank_e30000_omega1_beta0.5_E3000.csv --baseline_dir ./Results/Four_Tank/Four_Tank_e30000_omega1_beta0.0_E3000.csv --save_dir ./Results/Four_Tank/ 
-```
-
-* Use the scripts below to generate the Coupled Four Tank MIMO System environment figures mentioned in the ECC paper.
-```
-python plot_added_results.py --Env FT --TA_dir ./Results/Four_Tank/Four_Tank_e30000_omega1_beta0.5_E3000.csv --PPO_dir ./Results/Four_Tank/Four_Tank_e30000_omega1_beta0.0_E3000.csv --A2C_dir ./Results/Four_Tank/Four_Tank_A2C_omega1_R^T_reward.csv --DDPG_dir ./Results/Four_Tank/Four_Tank_DDPG_omega1_R^T_reward.csv --SAC_dir ./Results/Four_Tank/Four_Tank_SAC_omega1_R^T_reward.csv --TD3_dir ./Results/Four_Tank/Four_Tank_TD3_omega1_R^T_reward.csv --save_dir ./Results/Four_Tank/Figures/  --x_min 0 --x_max 15000 --y_min -370 --y_max -100
-```
-
-## Experiments
-### Random Walk
-* The scripts below run the test on the Random Walk environment with the same settings mentioned in the papers.
-```
-python RandomWalk.py --N 7 --E 100 --R 100 --b 0 1 100 --l 0.1 0.5 0.9 --d 0 --save_dir ./Results/RandomWalk/
-python RandomWalk.py --N 11 --E 150 --R 100 --b 0 1 100 --l 0.1 0.5 0.9 --d 0 --save_dir ./Results/RandomWalk/
-python RandomWalk.py --N 33 --E 500 --R 100 --b 0 1 --l 0.1 0.5 --d 0 --save_dir ./Results/RandomWalk/
-```
-### Optimal Temperature Control with Constraint
-* The scripts below run the test on the Optimal Temperature Control with Constraint environment with the same settings mentioned in the AAMAS paper.
-```
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 1 --E 4000 --w 1 --d False --save_dir ./Results/Temperature_Control/
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 0 --E 4000 --w 1 --d False --save_dir ./Results/Temperature_Control/
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 1 --E 4000 --w 10 --d False --save_dir ./Results/Temperature_Control/
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 0 --E 4000 --w 10 --d False --save_dir ./Results/Temperature_Control/
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 1 --E 4000 --w 100 --d False --save_dir ./Results/Temperature_Control/
-python Optimal_Temperature_Control_with_Constraint.py --e 8000 --b 0 --E 4000 --w 100 --d False --save_dir ./Results/Temperature_Control/
-```
-### A Coupled Four Tank MIMO System environment
-* The scripts below run the test on the Coupled Four Tank MIMO System environment with the same settings mentioned in the AAMAS paper.
-```
-python A_Coupled_Four_Tank_MIMO_System.py --e 30000 --b 0.5 --E 3000 --w 1 --d False --save_dir ./Results/Four_Tank/
-python A_Coupled_Four_Tank_MIMO_System.py --e 30000 --b 0 --E 3000 --w 1 --d False --save_dir ./Results/Four_Tank/
+python SB3_TD3_Pendulum-v1_run.py --Seed 0 --algo TD3 --env Pendulum --b 0
 ```
 
 # Citation
 Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.
 * Published in Information Sciences. 2024.
-Please cite the accompanied paper, if you find this useful:
+  
+Please cite the accompanying paper, if you find this useful:
 ```
 @article{beikmohammadi2024IS,
   title={Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge},
