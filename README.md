@@ -93,7 +93,7 @@ python plot_results_ablation.py
 
 
 ## How to Run Experiments
-### An Illustration of working with Accelerated-TD3
+### Running Accelerated-TD3 on Pendulum-v1
 > The script below runs a new test on the Pendulum-v1 environment using Accelerated-TD3 with customized settings.
 ```
 python SB3_TD3_Pendulum-v1_run.py -h
@@ -119,6 +119,114 @@ optional arguments:
   --Noise_Prob NOISE_PROB
                         Noise_Prob; default 0
 ```
+
+### Running Accelerated-TD3 on BipedalWalker-v3
+> The script below runs a new test on the BipedalWalker-v3 environment using Accelerated-TD3 with customized settings.
+```
+python SB3_TD3_BipedalWalker-v3_run.py -h
+
+usage: SB3_TD3_BipedalWalker-v3_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                       [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--SIGMA SIGMA]
+                                       [--MU MU]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 1493355531
+  --algo ALGO           default TD3
+  --env ENV             default Bipedal
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only R^T
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --SIGMA SIGMA         SIGMA; default 0
+  --MU MU               MU; default 0
+```
+
+### Running Accelerated-TD3 on CartPole-v1C
+> The script below runs a new test on the CartPole-v1C environment using Accelerated-TD3 with customized settings.
+```
+python SB3_TD3_CartPole-v1C_run-noise3.py -h
+
+usage: SB3_TD3_CartPole-v1C_run-noise3.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                          [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--SIGMA SIGMA]
+                                          [--MU MU]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 1
+  --algo ALGO           default TD3
+  --env ENV             default CartPole
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --SIGMA SIGMA         SIGMA; default 0
+  --MU MU               MU; default 0
+```
+
+
+### Running Accelerated-TD3 on LunarLander-v2C
+> The script below runs a new test on the LunarLander-v2C environment using Accelerated-TD3 with customized settings.
+```
+python SB3_TD3_LunarLander-v2C_run.py -h
+
+usage: SB3_TD3_LunarLander-v2C_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                      [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E]
+                                      [--Noise_STD NOISE_STD] [--Noise_Prob NOISE_PROB]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 3510913823
+  --algo ALGO           default TD3
+  --env ENV             default Lunar
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
+```
+
+
+### Running Accelerated-TD3 on MountainCar-v0C
+> The script below runs a new test on the MountainCar-v0C environment using Accelerated-TD3 with customized settings.
+```
+python SB3_TD3_MountainCar-v0C_run.py -h
+
+usage: SB3_TD3_MountainCar-v0C_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                      [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E]
+                                      [--Noise_STD NOISE_STD] [--Noise_Prob NOISE_PROB]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 2228253929
+  --algo ALGO           default TD3
+  --env ENV             default Mountain
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
+```
+
+
 ### An Illustration of working with Accelerated-SAC
 > The script below runs a new test on the Pendulum-v1 environment using Accelerated-SAC with customized settings.
 ```
@@ -146,73 +254,114 @@ optional arguments:
                         Noise_Prob; default 0
 ```
 
-
-### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: Optimal Temperature Control with Constraint
-> The scripts below run a new test on the Optimal Temperature Control with Constraint environment with customized settings.
+### Running Accelerated-SAC on BipedalWalker-v3
+> The script below runs a new test on the BipedalWalker-v3 environment using Accelerated-SAC with customized settings.
 ```
-python Optimal_Temperature_Control_with_Constraint.py -h
+python SB3_SAC_BipedalWalker-v3_run.py -h
 
-
-usage: Optimal_Temperature_Control_with_Constraint.py [-h] [--e E] [--b B] [--E E] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
+usage: SB3_SAC_BipedalWalker-v3_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                       [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--SIGMA SIGMA]
+                                       [--MU MU]
 optional arguments:
-  -h, --help           show this help message and exit
-  --e E                Total episodes to train through all environments; default 8000
-  --b B                initial_beta; default 1 if 0: only R^T, if (0, 1] adaptive_beta*R^A + (1-adaptive_beta)*R^T where beta = max((E-e)*initial_beta/E),0)
-  --E E                Episode in which the beta is zero; default 4000
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Temperature_Control/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 2778197655
+  --algo ALGO           default SAC
+  --env ENV             default Bipedal
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only R^T
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --SIGMA SIGMA         SIGMA; default 0
+  --MU MU               MU; default 0
 ```
 
+### Running Accelerated-SAC on CartPole-v1C
+> The script below runs a new test on the CartPole-v1C environment using Accelerated-SAC with customized settings.
 ```
-python Optimal_Temperature_Control_with_Constraint_added_results.py -h
+python SB3_SAC_CartPole-v1C_run-noise3.py -h
 
-
-usage: Optimal_Temperature_Control_with_Constraint_added_results.py [-h] [--a A] [--s S] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
-options:
-  -h, --help           show this help message and exit
-  --a A                Algorithm (A2C, DDPG, SAC, TD3); default DDPG
-  --s S                Seed number; default 0
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Temperature_Control/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
-```
-
-
-### OPTIMAL CONTROL PROBLEMS WITH CONSTRAINTS: A Coupled Four Tank MIMO System
-> The scripts below run a new test on the Coupled Four Tank MIMO System environment with customized settings.
-```
-python A_Coupled_Four_Tank_MIMO_System.py -h
-
-
-usage: A_Coupled_Four_Tank_MIMO_System.py [-h] [--e E] [--b B] [--E E] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
+usage: SB3_SAC_CartPole-v1C_run-noise3.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                          [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E] [--SIGMA SIGMA]
+                                          [--MU MU]
 optional arguments:
-  -h, --help           show this help message and exit
-  --e E                Total episodes to train through all environments; default 30000
-  --b B                initial_beta; default 0.5 if 0: only R^T, if (0, 1] adaptive_beta*R^A + (1-adaptive_beta)*R^T where beta = max((E-e)*initial_beta/E),0)
-  --E E                Episode in which the beta is zero; default 3000
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Four_Tank/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 1
+  --algo ALGO           default SAC
+  --env ENV             default CartPole
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --SIGMA SIGMA         SIGMA; default 0
+  --MU MU               MU; default 0
 ```
 
+
+### Running Accelerated-SAC on LunarLander-v2C
+> The script below runs a new test on the LunarLander-v2C environment using Accelerated-SAC with customized settings.
 ```
-python A_Coupled_Four_Tank_MIMO_System_added_results.py -h
+python SB3_SAC_LunarLander-v2C_run.py -h
 
-
-usage: A_Coupled_Four_Tank_MIMO_System_added_results.py [-h] [--a A] [--s S] [--w W] [--save_dir SAVE_DIR] [--d [D ...]]
-
-options:
-  -h, --help           show this help message and exit
-  --a A                Algorithm (A2C, DDPG, SAC, TD3); default DDPG
-  --s S                Seed number; default 0
-  --w W                omega, weighting values to the control objective; default 1
-  --save_dir SAVE_DIR  Save Directory; default ./Results/Four_Tank/
-  --d [D ...]          debug_level; default False False:nothing print True:print result per each episode
+usage: SB3_SAC_LunarLander-v2C_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                      [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E]
+                                      [--Noise_STD NOISE_STD] [--Noise_Prob NOISE_PROB]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 1536726603
+  --algo ALGO           default SAC
+  --env ENV             default Lunar
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
 ```
+
+
+### Running Accelerated-SAC on MountainCar-v0C
+> The script below runs a new test on the MountainCar-v0C environment using Accelerated-SAC with customized settings.
+```
+python SB3_SAC_MountainCar-v0C_run.py -h
+
+usage: SB3_SAC_MountainCar-v0C_run.py [-h] [--Seed SEED] [--algo ALGO] [--env ENV] [--Adap_B [ADAP_B [ADAP_B ...]]]
+                                      [--Just_B [JUST_B [JUST_B ...]]] [--w W] [--b B] [--s S] [--e E]
+                                      [--Noise_STD NOISE_STD] [--Noise_Prob NOISE_PROB]
+optional arguments:
+  -h, --help            show this help message and exit
+  --Seed SEED           Seed; default 4258880664
+  --algo ALGO           default SAC
+  --env ENV             default Mountain
+  --Adap_B [ADAP_B [ADAP_B ...]]
+                        Adaptive_Beta ; default True
+  --Just_B [JUST_B [JUST_B ...]]
+                        Just_Beta ; default True
+  --w W                 omega, weighting values to the control objective; default 10
+  --b B                 initial_beta; default 1 if 0: only rl loss, if 100: only mse loss
+  --s S                 start_iteration_number; default 0
+  --e E                 end_iteration_number; default 1000
+  --Noise_STD NOISE_STD
+                        Noise_STD; default 0
+  --Noise_Prob NOISE_PROB
+                        Noise_Prob; default 0
+```
+
+
+
 
 # Examples
 ## Plots
