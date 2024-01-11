@@ -370,7 +370,6 @@ python SB3_TD3_Pendulum-v1_run.py --Seed 0 --algo TD3 --env Pendulum --b 0
 
 # Citation
 Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.
-* Published in Information Sciences. 2024.
   
 Please cite the accompanying paper, if you find this useful:
 ```
