@@ -1,7 +1,6 @@
 # Accelerated-Actor-Critic-Algorithms
 Implementation of **Accelerated-Actor-Critic-Algorithms**, as presented in:
-* Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.
-
+* [Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.](https://doi.org/10.1016/j.ins.2024.120182)
 
 
 # Dependencies
@@ -369,17 +368,19 @@ python SB3_TD3_Pendulum-v1_run.py --Seed 0 --algo TD3 --env Pendulum --b 0
 ```
 
 # Citation
-Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.
-  
+[Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge. Information Sciences. 2024.](https://doi.org/10.1016/j.ins.2024.120182)  
+
 Please cite the accompanying paper, if you find this useful:
 ```
-@article{beikmohammadi2024IS,
-  title={Accelerating Actor-Critic-Based Algorithms via Pseudo-Labels Derived from Prior Knowledge},
-  author={Beikmohammadi, Ali and Magn{\'u}sson, Sindri},
-  journal={Information Sciences},
-  volume={x},
-  pages={x--x},
-  year={2024},
-  publisher={Elsevier}
+@article{BEIKMOHAMMADI2024120182IS,
+title = {Accelerating actor-critic-based algorithms via pseudo-labels derived from prior knowledge},
+journal = {Information Sciences},
+volume = {661},
+pages = {120182},
+year = {2024},
+issn = {0020-0255},
+doi = {https://doi.org/10.1016/j.ins.2024.120182},
+url = {https://www.sciencedirect.com/science/article/pii/S0020025524000951},
+author = {Ali Beikmohammadi and Sindri Magnússon}
 }
 ```
